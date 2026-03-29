@@ -7,5 +7,5 @@ catboost
 xgboost
 Flask
 dill
-flask-cors
--e .
+gunicorn
+# -e .

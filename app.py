@@ -1,10 +1,13 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+from flask import Flask, request, jsonify, render_template
 
 from src.pipeline.predict_pipeline import PredictPipeline, CustomData
 
 app = Flask(__name__)
-CORS(app)
+
+
+@app.route("/", methods=["GET"])
+def home():
+    return render_template("index.html")
 
 @app.route('/predict', methods=['POST'])
 def predict_datapoint():
